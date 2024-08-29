@@ -1,9 +1,11 @@
 const express = require("express")
-const router = express.router()
+const router = express.Router()
 
  //import controller
- const {createTodo} = require("../controllers/createToDo")
+ const {createToDo} = require("../controllers/createToDo")
 
  //defineAPI route
 
- router.post("/createToDo",createTodo)
+ router.post("/createTodo",createToDo)
+
+ module.exports = router

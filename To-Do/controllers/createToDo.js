@@ -1,25 +1,25 @@
-const Todo = require(".../models/ToDo")
+const Todo = require("../models/ToDo")
 
 exports.createToDo= async(req,res)=>{
     try{
         //extract title & description from the request body
-        const {title,description} = req.body()
+        const {title,description} = req.body
         //create a new todo Obj & insert in DB
-        const res = await Todo.create({ title,description})
+        const response = await Todo.create({ title,description})
         res.status(200).json({
             success:true,
             data:response,
             message:"Entry Created Successfully"
         })
     }
-    catch(error){
+    catch(err){
          
-        console.log("error occured: "+error)
-        res.status(500).json(
+        res.status(500)
+        .json(
             {
                 success:false,
                 data:"Internal Server error",
-                message:error.message
+                message:err.message
             }
 
         )
