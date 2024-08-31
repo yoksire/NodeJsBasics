@@ -21,7 +21,7 @@ exports.deleteToDoById = async(req,res)=>{
         .json({
             success:false,
             error:err.message,
-            message:'Server Error '
+            message:'Server Error'
         })
 
     }

@@ -12,7 +12,7 @@ const router = express.Router()
  router.post("/createTodo",createToDo)
  router.get("/getTodo",getToDo)
  router.get("/getTodo/:id",getToDoById)
- router.delete("/deleteTodo/:id",deleteToDoById)
+ router.delete("/deleteTodo/:id",deleteToDoById) 
  router.post("/updateTodo/:id",updateToDo)
 
  module.exports = router
