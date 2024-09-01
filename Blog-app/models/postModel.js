@@ -10,6 +10,11 @@ const postSchema = mongoose.Schema({
         maxLength:50,
         required:true
     },
+    title:{
+        type:String,
+        maxLength:50,
+        required:true
+    },
     addedDate:{
         type:Date,
         required:true,
@@ -26,7 +31,7 @@ const postSchema = mongoose.Schema({
     }],
     comment:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"post"
+        ref:"comment"
     }]
 })
 
