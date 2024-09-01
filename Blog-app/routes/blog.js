@@ -13,5 +13,6 @@ router.get("/post",showPost)
 router.post("/comment/create",createComment)
 router.post("/like/create",createLike)
 router.post("/post/create",createPost)
+router.post("/like/unlike",deleteLike)
 
 module.exports = router
