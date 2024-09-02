@@ -8,7 +8,7 @@ exports.createLike = async(req,res)=>{
         const like = new Like({post,user})
         const savedLike = await like.save()
         const updatedPost = await Post.findByIdAndUpdate(post,{$push:{like:savedLike._id}},{new:true}).populate("like").exec()
-        res.json({
+        res.json({ 
             post:updatedPost
         })
 }catch(err){
@@ -23,7 +23,7 @@ exports.deleteLike = async(req,res)=>{
         const{like,post,user} = req.body
         const deletedLike = await Like.findOneAndDelete({post:post,_id:like,user:user})
 
-        console.log(deletedLike)
+        
 
         const updatedPost= await Post.findByIdAndUpdate(post,{$pull:{like:deletedLike._id}},{new: true})
         res.json({

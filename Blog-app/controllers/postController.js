@@ -38,3 +38,18 @@ exports.createPost= async(req,res)=>{
          })
     }
 }
+
+exports.deletePost = async(req,res)=>{
+    try{
+        const {id} = req.params.id
+        const response = await Post.deleteOne({_id:id})
+        res.status(200).json({
+            post:response
+        })
+
+    }catch(err){
+        return res.status(200).json({    
+            error:"Error while deleting the post"
+        })
+    }
+}
