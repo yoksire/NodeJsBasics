@@ -49,7 +49,7 @@ exports.deletePost = async(req,res)=>{
 
     }catch(err){
         return res.status(200).json({    
-            error:"Error while deleting the post"
+            error:"Error while deleting the post" 
         })
     }
 }
