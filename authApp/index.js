@@ -13,6 +13,6 @@ const app = express()
 
  })
 
- app.listen("/",(req,res)=>{
+ app.get("/",(req,res)=>{
     res.send("<h1>This is HomePage</h1>")
  })
